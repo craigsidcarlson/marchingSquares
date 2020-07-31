@@ -3,16 +3,20 @@ let height;
 let terrain;
 let particle;
 function setup() {
-  width = windowWidth * 0.9 ;
-  height = windowHeight * 0.9;
+  width = windowWidth *0.95;
+  height = windowHeight*0.95;
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  const cnv = createCanvas(width, height);
+  cnv.position(x, y);
   const particle_fov = 90;
   const resolution = 8;
   // width = windowWidth;
   // height = windowHeight;
-  createCanvas(width, height);
   terrain = new GenerateTerrain(resolution);
   particle = new Particle(particle_fov);
 }
+
  
 function draw() {
   if (!terrain || !terrain.walls) return;
