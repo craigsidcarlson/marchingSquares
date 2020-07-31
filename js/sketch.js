@@ -3,10 +3,10 @@ let height;
 let terrain;
 let particle;
 function setup() {
-  width = 600;
-  height = 400;
+  width = windowWidth * 0.9 ;
+  height = windowHeight * 0.9;
   const particle_fov = 90;
-  const resolution = 5;
+  const resolution = 8;
   // width = windowWidth;
   // height = windowHeight;
   createCanvas(width, height);
@@ -29,8 +29,14 @@ function draw() {
   background(0);
 
   particle.show();
-  const seen_wall_indexes = particle.look(terrain.walls);
-  for (let i = 0; seen_wall_indexes.length && i < seen_wall_indexes.length; i++) {
-    terrain.walls[seen_wall_indexes[i]].show();
+  if (keyIsDown(CONTROL)) {
+   for (let i = 0; i < terrain.walls.length; i++) {
+     terrain.walls[i].show();
+   }
+  } else {
+    const seen_wall_indexes = particle.look(terrain.walls);
+    for (let i = 0; seen_wall_indexes.length && i < seen_wall_indexes.length; i++) {
+      terrain.walls[seen_wall_indexes[i]].show();
+    }
   }
 }
