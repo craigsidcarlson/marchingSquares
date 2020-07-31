@@ -3,14 +3,14 @@ A procedural generated cave network with a movable particle that maps the cave w
 
 https://craigsidcarlson.github.io/marchingSquares/
 
-# How to
+# How to explore
 Use the arrow keys to move around amd explore the cave. Refresh the page for a new cave.
 
 # Cave Generation
 This project generates caves using the marching squares algorithm and <a href="https://github.com/joshforisha/open-simplex-noise-js">Open Simplex Noise</a> (The open source version of simplex noise) which is what allows the caves to be continuos. The cave walls are constructed of 2D boundary vectors placed the marching squares algorithm. The openness of the caves is determined by the resolution, which is configurable through code. 
 
 # Ray Tracing
-You can explore the caves with a small particle that emits rays in the fov. The fov is configurable in the code. The particle uses ray tracing to cast a point from each ray being emitted (two rays per degree, this is configurable) onto the closest wall. Once the section of the wall (boundary vector) has been seen it stays lite. 
+You can explore the caves with a small particle that emits rays in the fov. The fov is configurable in the code. The particle uses ray tracing to cast a point from the particle's location onto the closest wall, it casts two rays per degree within the fov. Once the section of the wall (boundary vector) has been seen it stays lite. 
 
 The particle cannot pass through wall. This is done by analyzing the center ray being cast and determines if the distance to that boundary vector is less than the particle's movement amount.
 
