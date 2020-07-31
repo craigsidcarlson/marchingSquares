@@ -16,10 +16,10 @@ class GenerateTerrain {
     }
 
     // Add borders to screen
-    // this.walls.push(new Boundary(0, 0, width, 0));
-    // this.walls.push(new Boundary(width, 0, width, height));
-    // this.walls.push(new Boundary(width, height, 0, height));
-    // this.walls.push(new Boundary(0, height, 0, 0));
+    this.walls.push(new Boundary(0, 0, width, 0));
+    this.walls.push(new Boundary(width, 0, width, height));
+    this.walls.push(new Boundary(width, height, 0, height));
+    this.walls.push(new Boundary(0, height, 0, 0));
 
     let xoff = 0;
     for(let i = 0; i < this.cols; i++) {
@@ -31,7 +31,7 @@ class GenerateTerrain {
       }
     }
 
-    // March some squares
+    // March squares algorithm
     for(let i = 0; i < this.cols - 1; i++) {
       for (let j = 0; j < this.rows - 1; j++) {
         const x = i * this.rez;

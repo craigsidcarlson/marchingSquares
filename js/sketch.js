@@ -29,14 +29,8 @@ function draw() {
   background(0);
 
   particle.show();
-  if (keyIsDown(CONTROL)) {
-   for (let i = 0; i < terrain.walls.length; i++) {
-     terrain.walls[i].show();
-   }
-  } else {
-    const seen_wall_indexes = particle.look(terrain.walls);
-    for (let i = 0; seen_wall_indexes.length && i < seen_wall_indexes.length; i++) {
-      terrain.walls[seen_wall_indexes[i]].show();
-    }
+  particle.look();
+  for (let i = 0; i < terrain.walls.length; i++) {
+    terrain.walls[i].show();
   }
 }

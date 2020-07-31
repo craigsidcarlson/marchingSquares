@@ -33,14 +33,13 @@ class Particle {
     ellipse(this.pos.x, this.pos.y, 4);
   }
 
-  look(walls) {
-    const seen_wall_indexes = [];
+  look() {
     for (let i = 0; i < this.rays.length; i++) {
       let closest = null;
       let closest_wall_index = null;
       let record = Infinity;
-      for (let j = 0; j < walls.length; j++) {
-        const pt = this.rays[i].cast(walls[j]);
+      for (let j = 0; j < terrain.walls.length; j++) {
+        const pt = this.rays[i].cast(terrain.walls[j]);
         if (pt) {
           let d = p5.Vector.dist(this.pos, pt);
           const a = this.rays[i].dir.heading() - this.heading;
@@ -56,8 +55,9 @@ class Particle {
         stroke(255, 100);
         line(this.pos.x, this.pos.y, closest.x, closest.y);
       }
-      if (closest_wall_index) seen_wall_indexes.push(closest_wall_index);
+      if (closest) {
+        terrain.walls[closest_wall_index].seen = true;
+      } 
     }
-    return seen_wall_indexes;
   }
 }
