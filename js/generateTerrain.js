@@ -16,10 +16,10 @@ class GenerateTerrain {
     }
 
     // Add borders to screen
-    this.walls.push(new Boundary(0, 0, width, 0));
-    this.walls.push(new Boundary(width, 0, width, height));
-    this.walls.push(new Boundary(width, height, 0, height));
-    this.walls.push(new Boundary(0, height, 0, 0));
+    this.walls.push(new Boundary(0, 0, width, 0, true));
+    this.walls.push(new Boundary(width, 0, width, height, true));
+    this.walls.push(new Boundary(width, height, 0, height, true));
+    this.walls.push(new Boundary(0, height, 0, 0, true));
 
     let xoff = 0;
     for(let i = 0; i < this.cols; i++) {

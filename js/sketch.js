@@ -2,6 +2,7 @@ let width;
 let height;
 let terrain;
 let particle;
+const move_distance = 1.618;
 function setup() {
   width = windowWidth *0.95;
   height = windowHeight*0.95;
@@ -9,8 +10,8 @@ function setup() {
   var y = (windowHeight - height) / 2;
   const cnv = createCanvas(width, height);
   cnv.position(x, y);
-  const particle_fov = 90;
-  const resolution = 10;
+  const particle_fov = 60;
+  const resolution = 12;
   // width = windowWidth;
   // height = windowHeight;
   terrain = new GenerateTerrain(resolution);
@@ -21,15 +22,14 @@ function setup() {
 function draw() {
   if (!terrain || !terrain.walls) return;
   if (keyIsDown(RIGHT_ARROW)) {
-    particle.rotate(0.03);
+    particle.rotate(0.05);
   } else if(keyIsDown(LEFT_ARROW)) {
-    particle.rotate(-0.03);
+    particle.rotate(-0.05);
   } 
-  if(keyIsDown(UP_ARROW)) {
-    particle.move(1);
-  } else if(keyIsDown(DOWN_ARROW)) {
-    particle.move(-1);
+  if(keyIsDown(UP_ARROW) && !particle.blocked) {
+    particle.move(move_distance);
   }
+ 
   background(0);
 
   particle.show();
@@ -38,3 +38,4 @@ function draw() {
     terrain.walls[i].show();
   }
 }
+
