@@ -30,17 +30,14 @@ class Particle {
 
   show() {
     fill(255);
-
     ellipse(this.pos.x, this.pos.y, 4);
-    // for (let ray of this.rays) {
-    //   ray.show();
-    // }
   }
 
   look(walls) {
-    const scene = [];
+    const seen_wall_indexes = [];
     for (let i = 0; i < this.rays.length; i++) {
       let closest = null;
+      let closest_wall_index = null;
       let record = Infinity;
       for (let j = 0; j < walls.length; j++) {
         const pt = this.rays[i].cast(walls[j]);
@@ -51,6 +48,7 @@ class Particle {
           if (d < record) {
             record = d;
             closest = pt;
+            closest_wall_index = j;
           }
         }
       }
@@ -58,8 +56,8 @@ class Particle {
         stroke(255, 100);
         line(this.pos.x, this.pos.y, closest.x, closest.y);
       }
-      scene[i] = record;
+      if (closest_wall_index) seen_wall_indexes.push(closest_wall_index);
     }
-    return scene;
+    return seen_wall_indexes;
   }
 }
