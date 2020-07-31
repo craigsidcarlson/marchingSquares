@@ -6,6 +6,8 @@ https://craigsidcarlson.github.io/marchingSquares/
 # How to explore
 Use the arrow keys to move around amd explore the cave. Refresh the page for a new cave.
 
+Hold CTRL to cheat.
+
 # Cave generation
 This project generates caves using the marching squares algorithm and <a href="https://github.com/joshforisha/open-simplex-noise-js">Open Simplex Noise</a> (The open source version of simplex noise) which is what allows the caves to be continuos. The cave walls are constructed of 2D boundary vectors placed the marching squares algorithm. The openness of the caves is determined by the resolution, which is configurable through code. 
 
