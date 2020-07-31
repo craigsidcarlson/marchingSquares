@@ -10,7 +10,7 @@ function setup() {
   const cnv = createCanvas(width, height);
   cnv.position(x, y);
   const particle_fov = 90;
-  const resolution = 8;
+  const resolution = 10;
   // width = windowWidth;
   // height = windowHeight;
   terrain = new GenerateTerrain(resolution);
