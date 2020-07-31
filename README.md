@@ -22,7 +22,8 @@ There is a lot more potential here:
   - All of these cave generation configuration could easily have sliders available to the user.
 
 # Resources
-https://www.youtube.com/watch?v=0ZONMNUKTfU
-https://www.youtube.com/watch?v=TOEi6T2mtHo
-https://www.youtube.com/watch?v=vYgIKn7iDH8
-https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection 
+https://www.youtube.com/watch?v=0ZONMNUKTfU <br>
+https://www.youtube.com/watch?v=TOEi6T2mtHo <br>
+https://www.youtube.com/watch?v=vYgIKn7iDH8 <br>
+https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection  <br>
+https://github.com/joshforisha/open-simplex-noise-js <br>
