@@ -34,8 +34,14 @@ function draw() {
 
   particle.show();
   particle.look();
-  for (let i = 0; i < terrain.walls.length; i++) {
-    terrain.walls[i].show();
+  if (keyIsDown(CONTROL)) {
+    for (let i = 0; i < terrain.walls.length; i++) {
+      terrain.walls[i].cheat();
+    }
+  } else {
+    for (let i = 0; i < terrain.walls.length; i++) {
+      terrain.walls[i].show();
+    }
   }
 }
 

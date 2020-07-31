@@ -18,4 +18,16 @@ class Boundary {
       line(this.a.x, this.a.y, this.b.x, this.b.y);
     }
   }
+
+  cheat() {
+    stroke(255);
+
+    if (this.edge) {
+      strokeWeight(3);
+      line(this.a.x, this.a.y, this.b.x, this.b.y);
+      strokeWeight(1);
+    } else {
+      line(this.a.x, this.a.y, this.b.x, this.b.y);
+    }
+  }
 }
