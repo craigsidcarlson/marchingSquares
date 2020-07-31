@@ -1,4 +1,5 @@
- # Craig Cave Explorer
+ # Craig's Cave Explorer
+A procedural generated cave network with a movable particle that maps the cave with ray tracing.
 
 # Cave Generation
 This project generates caves using the marching squares algorithm and open simplex noise (The open source verison of simplex noise) which is what allows the caves toi be continuos. The cave walls are constructed of 2D boundary vectors. The openess of the caves is determined by the resolution, which is configurable through code. All of these configurations could easily have sliders available to the user.
@@ -19,5 +20,4 @@ There is a lot more potential here:
 https://www.youtube.com/watch?v=0ZONMNUKTfU
 https://www.youtube.com/watch?v=TOEi6T2mtHo
 https://www.youtube.com/watch?v=vYgIKn7iDH8
-
-https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
+https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection 
